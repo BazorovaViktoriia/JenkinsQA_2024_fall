@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import school.redrover.page.CreateNewItemPage;
+import school.redrover.page.ManageJenkinsPage;
 
 import java.util.List;
 
@@ -18,6 +19,14 @@ public abstract class BaseProjectPage<Self extends BaseProjectPage<?>> extends B
         getDriver().findElement(By.xpath("//span[text()='New Item']/ancestor::a")).click();
 
         return new CreateNewItemPage(getDriver());
+    }
+
+
+    //Нажимаю кнопку Настроить jenkins На главной странице
+    public ManageJenkinsPage clickOkSettingsJenkinsBtn() {
+        getDriver().findElement(By.xpath("//*[@id='tasks']/div[3]/span/a")).click();
+
+        return new ManageJenkinsPage(getDriver());
     }
 
     public Self editDescription(String text) {

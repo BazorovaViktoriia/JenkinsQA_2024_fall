@@ -12,6 +12,8 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import static java.lang.Thread.sleep;
+
 @Listeners({FilterForTests.class, OrderForTests.class})
 public abstract class BaseTest {
 
@@ -85,10 +87,11 @@ public abstract class BaseTest {
         ProjectUtils.logf("Run %s.%s", this.getClass().getName(), method.getName());
         try {
             if (!methodsOrder.isGroupStarted(method) || methodsOrder.isGroupFinished(method)) {
-                clearData();
+                //clearData();
                 startDriver();
                 getWeb();
                 loginWeb();
+                sleep(100);
             } else {
                 getWeb();
                 acceptAlert();

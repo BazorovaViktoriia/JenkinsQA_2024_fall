@@ -22,6 +22,7 @@ public class ManageJenkinsPage extends BasePage {
         return new PluginsPage(getDriver());
     }
 
+
     public UsersPage openUsersPage() {
         getWait10().until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//a[@href='securityRealm/']")))).click();
 
@@ -117,4 +118,11 @@ public class ManageJenkinsPage extends BasePage {
 
         return new CredentialsConfigurePage(getDriver());
     }
+
+    //Нажимаем кнопку Node
+    public ComputerPage clickNode(){
+        getDriver().findElement(By.xpath("//*[@id=\"main-panel\"]/section[2]/div/div[4]/a")).click();
+        return new ComputerPage(getDriver());
+    }
+
 }
