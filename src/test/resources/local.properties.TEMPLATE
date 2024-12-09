@@ -1,5 +1,5 @@
-local.admin.username=<Viklandia>
-local.admin.password=<2d6a16ba5191ececa8c3aeb511790e2a955e1f654e0e0581b885c76ab819e1a3>
+local.admin.username=<>
+local.admin.password=<>
 local.host=localhost
 local.port=8080
 local.chrome_options=--window-size=1920,1080
