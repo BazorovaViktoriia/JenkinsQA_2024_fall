@@ -29,6 +29,11 @@ public class ManageJenkinsPage extends BasePage {
         return new UsersPage(getDriver());
     }
 
+    public void openComputerPage() {
+        getWait10().until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"main-panel\"]/section[2]/div/div[4]/a/div")))).click();
+
+    }
+
     public List<String> getAllSections() {
         List<WebElement> sections = getDriver().findElements(By.xpath("//h2[@class='jenkins-section__title']"));
 

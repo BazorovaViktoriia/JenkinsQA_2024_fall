@@ -12,18 +12,22 @@ public class NewComputerPage extends BasePage {
     }
 
     By inputName = By.id("name");
-    WebElement radioButton = getDriver().findElement(By.id("hudson.slaves.DumbSlave"));
+    WebElement radioButton = getDriver().findElement(By.className("jenkins-radio__label"));
 
     By saveBtn = By.id("//*[@id=\"ok\"]");
 
-    public void writeNodeName(String name) {
+    public NewComputerPage writeNodeName(String name) {
         getDriver().findElement(inputName).sendKeys(name);
+        System.out.println("Вводим название нового узла");
+        return this;
     }
 
-    public void radioBtnClick() {
+    public NewComputerPage radioBtnClick() {
 
         if (!radioButton.isSelected())
             radioButton.click();
+        System.out.println("Нажала радиобаттон");
+        return this;
     }
 
     public CreateNewNodePage clickSaveBtn(){
